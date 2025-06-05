@@ -1,0 +1,709 @@
+.sharing {
+    position: relative;
+    padding: 8rem 3rem 0 3rem;
+}
+
+.search {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: fit-content;
+}
+
+.addPub {
+    position: fixed;
+    z-index: 200;
+    right: 2rem;
+    bottom: 5rem;
+    width: fit-content;
+    padding: .8rem 1.5rem;
+    border-radius: 50%;
+    font-size: 2rem;
+    border: #fcded6 solid 1px;
+    color: #fcded6;
+    background-color: #644758;
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+}
+
+.addPub:hover {
+    background-color: #fcded6;
+    color: #644758;
+    border: #644758 solid 1px;
+}
+
+/* ---------------------------------------------- */
+/* -----------------SEARCHBAR-------------------- */
+/* ---------------------------------------------- */
+
+.searchBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+}
+
+.searchBar input {
+    width: 100%;
+    background-color: #fcded6;
+    border: 1px solid #644758;
+    border-radius: 5px;
+    padding: .5rem;
+}
+
+.searchBar i {
+    cursor: pointer;
+    color: #644758;
+    font-size: 1.5rem;
+    padding: .5rem 1rem;
+    background-color: #fcded6;
+    border: 1px solid #644758;
+    border-radius: 5px;
+    transition: all .1s ease-in-out;
+}
+
+.searchBar i:hover {
+    background-color: #644758;
+    color: #fcded6;
+}
+
+.searchAndFilters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+/* --- TAGS --- */
+
+.tagsContainer {
+    position: absolute;
+    background-color: #fcded6;
+    width: 100%;
+    top: 99%;
+    border: 1px solid #644758;
+    border-radius: 5px;
+    z-index: 2;
+}
+
+.tagsContainer p {
+    padding: .3rem 1rem;
+    font-weight: bold;
+    border-bottom: 1px solid #644758;
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+}
+
+.tagsDisplayNone {
+    display: none;
+}
+
+/* ---------------------------------------------- */
+/* -------------------FILTERS-------------------- */
+/* ---------------------------------------------- */
+
+.filters {
+    margin-left: 1.5rem;
+    background-color: #644758;
+    color: #fcded6;
+    border-radius: 15px;
+    padding: .5rem 1rem;
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+}
+
+.filters:hover {
+    border: 1px solid #fcded6;
+    transform: scale(0.9);
+}
+
+.filtersMenu {
+    position: absolute;
+    top: 12.5rem;
+    left: 50%;
+    background-color: #644758;
+    color: #fcded6;
+    border-radius: 15px;
+    padding: .5rem 1rem;
+    cursor: pointer;
+    transform: translateX(-50%);
+    transition: all .1s ease-in-out;
+}
+
+.filtersMenu ul {
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.filtersMenu li {
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+    padding: .2rem .5rem;
+    border-radius: 10px;
+}
+
+.filtersMenu li:hover {
+    background-color: #fcded6;
+    color: #644758;
+}
+
+.filterHidden {
+    display: none;
+}
+
+.filterVisible {
+    display: flex;
+}
+
+/* ---------------------------------------------- */
+/* -------------------PopUp ADD------------------ */
+/* ---------------------------------------------- */
+
+.addPubPopUp {
+    position: fixed;
+    z-index: 3;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(2px);
+}
+
+.addPubPopUpContainer {
+    background-color: #8f8189;
+    border: 2px solid #644758;
+    border-radius: 15px;
+    padding: 1rem;
+    gap: 1rem;
+    max-width: 50%;
+    color: #fcded6;
+}
+
+.addPubPopUpContainer input,
+.addPubPopUpContainer select {
+    border: 1px solid #644758;
+    background-color: #fcded6;
+    color: #644758;
+    border-radius: 5px;
+    padding: .5rem 1rem;
+    margin-bottom: .5rem;
+}
+
+.addPubPopUpContainer h2 {
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.popUpBtn {
+    background-color: #644758;
+    color: #fcded6;
+    border: 1px solid #fcded6;
+    border-radius: 5px;
+    padding: .5rem 1rem;
+    margin-left: 1rem;
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+}
+
+.popUpBtn:hover {
+    background-color: #fcded6;
+    color: #644758;
+    border: 1px solid #644758;
+}
+
+/* ------------- MODELS ------------ */
+
+.modelsList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.modelsList li {
+    display: flex;
+    justify-content: space-between;
+    background-color: #644758;
+    color: #fcded6;
+    border-radius: 5px;
+    padding: .2rem .5rem;
+}
+
+.deleteModel {
+    cursor: pointer;
+}
+
+/* ------------- TAGS ------------ */
+
+.tagsList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.tagsList li {
+    display: flex;
+    justify-content: space-between;
+    background-color: #644758;
+    color: #fcded6;
+    width: 23%;
+    border-radius: 5px;
+    padding: .2rem .5rem;
+}
+
+.tagSpan {
+    width: 70%;
+    overflow: hidden;
+}
+
+.deleteTag {
+    cursor: pointer;
+}
+
+/* ------------- PublishBtn ------------ */
+
+.publishBtnContainer {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.publishBtn {
+    background-color: #644758;
+    color: #fcded6;
+    border: 1px solid #fcded6;
+    border-radius: 5px;
+    padding: .5rem 1rem;
+    margin-left: 1rem;
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+}
+
+.publishBtn:hover {
+    background-color: #fcded6;
+    color: #644758;
+    border: 1px solid #644758;
+}
+
+/* ------------- MISC ------------ */
+
+.addPubHidden {
+    display: none;
+}
+
+.addPubVisible {
+    display: flex;
+}
+
+.requiredFields {
+    color: red;
+}
+
+/* ---------------------------------------------- */
+/* --------------- PUBLICATIONS ----------------- */
+/* ---------------------------------------------- */
+
+.publicationsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 2rem 0;
+    gap: 2rem;
+}
+
+.publication {
+    width: 300px;
+}
+
+/* HEADER */
+
+.publicationHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem;
+    border: #644758 solid 1px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #fcded6;
+}
+
+.pubUserContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pubUserAvatar {
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.pubContent {
+    background-color: #fcded6;
+    border: #644758 solid 1px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: .5rem;
+}
+
+.pubContent h2 {
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+    overflow-x: hidden;
+}
+
+.pubParagraph {
+    font-weight: 400;
+    height: 100px;
+    overflow-y: hidden;
+    font-size: 1rem;
+    margin-bottom: .5rem;
+}
+
+.likeContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.likeContainer span {
+    font-weight: 600;
+}
+
+.likeAndComments {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.likeHeart {
+    font-size: 1.5rem;
+    color: red;
+    cursor: pointer;
+}
+
+.commentsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.commentsContainer span {
+    font-weight: 600;
+}
+
+.commentsContainer i {
+    font-size: 1.5rem;
+    color: white;
+    text-shadow:
+        1px 1px 1px rgba(0, 0, 0, 0.5),
+        /* Bottom-right */
+        -1px -1px 1px rgba(0, 0, 0, 0.5),
+        /* Top-left */
+        1px -1px 1px rgba(0, 0, 0, 0.5),
+        /* Top-right */
+        -1px 1px 1px rgba(0, 0, 0, 0.5);
+    /* Bottom-left */
+}
+
+
+/* -------------------------- */
+/* -------- CAROUSEL -------- */
+/* -------------------------- */
+
+.carousel-container-publication {
+    position: relative;
+    z-index: 1;
+    /* or remove z-index if not needed */
+}
+
+.my-carousel-item-publication {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(44, 44, 44);
+}
+
+.tags {
+    display: none;
+}
+
+/* ------------------------------ */
+/* ---------- PubPopUp ---------- */
+/* ------------------------------ */
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    padding-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 1000;
+}
+
+.modalContent {
+    width: 80%;
+    max-width: 800px;
+    border-radius: 10px;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modalContent::-webkit-scrollbar {
+    width: 5px;
+}
+
+.modalContent::-webkit-scrollbar-thumb {
+    background-color: #644758;
+    /* Thumb color */
+    border-radius: 10px;
+    /* Rounded corners */
+    transition: background-color 0.3s ease;
+    /* Smooth hover transition */
+}
+
+/* Hover effect for the scrollbar handle */
+.modalContent::-webkit-scrollbar-thumb:hover {
+    background-color: #644758;
+    /* Darker thumb color on hover */
+}
+
+/* Style the scrollbar track (the empty part) */
+.modalContent::-webkit-scrollbar-track {
+    background-color: #fcded6;
+    /* Track color */
+    border-radius: 10px;
+    /* Rounded corners */
+}
+
+.deletePubBtn {
+    position: absolute;
+    z-index: 1000;
+    bottom: 6px;
+    background-color: #fcded6;
+    color: #644758;
+    border: 2px solid #644758;
+    border-radius: 25px;
+    padding: 0 .5rem;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+}
+
+.deletePubBtn:hover {
+    background-color: #644758;
+    color: #fcded6;
+    border: 2px solid #fcded6;
+}
+
+/* OVERWRITE */
+
+.publicationPU {
+    width: 100%;
+}
+
+.my-carousel-item-publication-PU {
+    max-height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(44, 44, 44);
+}
+
+.pubContent hr {
+    margin: 1rem 0;
+    color: #644758;
+}
+
+.writeNewComment h3 {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+/* -------------- COMMENT --------------*/
+
+.commentInput {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: .5rem 0;
+}
+
+.commentInput input {
+    width: 100%;
+    border: 1px solid #644758;
+    border-radius: 10px;
+    padding: .5rem;
+    background-color: #fcded6;
+}
+
+.commentInput i {
+    font-size: 2rem;
+    color: #644758;
+    padding: 0 1rem 0 2rem;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+}
+
+.commentInput i:hover {
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+    transform: scale(1.1);
+}
+
+.comment {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    padding: .5rem;
+}
+
+.commentUserAvatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    height: 10%;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #644758;
+}
+
+.commentSpans {
+    display: flex;
+    gap: 1rem;
+}
+
+.commentSpans :nth-child(1) {
+    font-weight: 600;
+}
+
+.commentSpans :nth-child(2) {
+    color: gray;
+}
+
+.commentTextContainer {
+    width: 100%;
+}
+
+.commentTextContainer :nth-child(2) {
+    margin: 0;
+}
+
+.commentTextContainer :nth-child(3) {
+    color: #644758;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+}
+
+.commentTextContainer :nth-child(3):hover {
+    color: #915979;
+}
+
+.answerCommentInput {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+}
+
+.answerCommentInput input {
+    width: 100%;
+    border: 1px solid #644758;
+    border-radius: 10px;
+    padding: .2rem;
+    background-color: #fcded6;
+}
+
+.answerCommentInput i {
+    font-size: 1rem;
+    color: #644758;
+    padding: 0 1rem 0 2rem;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+}
+
+.answerCommentInput i:hover {
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+    transform: scale(1.1);
+}
+
+.subanswers {
+    margin-bottom: 1rem;
+}
+
+.subanswer {
+    display: flex;
+    gap: 1rem;
+    margin-left: 4rem;
+    padding: .5rem 1rem;
+    border-left: #644758 solid 2px;
+}
+
+.answerInputContainer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.answerInputContainer input {
+    width: 70%;
+    border: 1px solid #644758;
+    border-radius: 10px;
+    padding: 0 .1rem;
+    background-color: #fcded6;
+}
+
+.answerInputContainer i {
+    font-size: 1.5rem;
+    color: #644758;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+}
+
+.answerInputContainer i:hover {
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+    transform: scale(1.1);
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 1240px) {
+    .sharing {
+        padding: 10rem 3rem 0 3rem;
+    }
+}
+
+@media screen and (max-width: 765px) {
+    .sharing {
+        padding: 8rem 3rem 0 3rem;
+    }
+}

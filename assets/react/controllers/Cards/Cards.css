@@ -1,0 +1,179 @@
+.cardsTitleH2 {
+    padding: 1rem 5rem;
+    font-size: xx-large;
+    font-weight: 600;
+    color: #594841;
+    text-shadow: 1px 2px 2px rgba(88, 88, 88, 0.6);
+}
+
+.cards {
+    padding: 0 3rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.card {
+    overflow: hidden;
+    width: 400px;
+    height: 500px;
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    margin: 2rem .5rem;
+    border: 2px solid #644758;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* ------------------ .cardInfo ------------------- */
+
+.cardInfo {
+    padding: 1rem;
+    height: 250px;
+    background-color: #fcded6;
+    overflow-y: scroll;
+}
+
+.cardInfo::-webkit-scrollbar {
+    width: 5px;
+}
+
+.cardInfo::-webkit-scrollbar-thumb {
+    background-color: #644758;
+    /* Thumb color */
+    border-radius: 10px;
+    /* Rounded corners */
+    transition: background-color 0.3s ease;
+    /* Smooth hover transition */
+}
+
+/* Hover effect for the scrollbar handle */
+.cardInfo::-webkit-scrollbar-thumb:hover {
+    background-color: #644758;
+    /* Darker thumb color on hover */
+}
+
+/* Style the scrollbar track (the empty part) */
+.cardInfo::-webkit-scrollbar-track {
+    background-color: #fcded6;
+    /* Track color */
+    border-radius: 10px;
+    /* Rounded corners */
+}
+
+.cardInfo h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-shadow: 1px 2px 2px rgba(88, 88, 88, 0.6);
+}
+
+.cardInfo hr {
+    color: #644758;
+    margin: .5rem 0 1rem 0;
+}
+
+.cardInfo p {
+    font-size: 1rem;
+    text-shadow: 1px 2px 2px rgba(88, 88, 88, 0.6);
+}
+
+.carousel-container-card button {
+    z-index: 50;
+}
+
+/* @media screen and (max-width: 1505px) {
+    .cardsTitleH2 {
+        padding: 1rem 3rem;
+    }
+
+    .cards {
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+
+    .cards .card:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+
+    .card {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        margin: 2rem 0;
+    }
+
+    .cardInfo {
+        width: 100%;
+    }
+
+    .card img {
+        max-width: 400px;
+        max-height: 250px;
+    }
+    
+} */
+
+/* ------------------ Instagram ------------------- */
+
+.instaPubsContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+}
+.instaPub {
+    width: 30%;
+}
+.instaPub>div {
+    width: 100%;
+}
+
+/* ------------------ Annonce ------------------- */
+
+.annonce {
+    padding: 1rem 1rem;
+    margin: 0 3rem 2rem 3rem;
+    background-color: #fcded6;
+    border-radius: 25px;
+    border: 1px solid #644758;
+}
+
+/* ------------------ MEDIA QUERIES ------------------- */
+
+@media screen and (max-width: 1505px) {
+    .cardsTitleH2 {
+        padding: 1rem 3rem;
+    }
+    .cards {
+        justify-content: space-around;
+        align-items: center;
+    }
+    .card {
+        width: 400px;
+        height: fit-content;
+    }
+
+    .cardInfo {
+        width: 100%;
+    }
+
+    .card img {
+        max-width: 400px;
+        max-height: 250px;
+    }
+    
+}
+
+@media screen and (max-width: 930px) {
+    .cards {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card {
+        flex-direction: column;
+        width: 400px;
+    }
+
+    .cards .card:nth-child(even) {
+        flex-direction: column;
+    }
+}

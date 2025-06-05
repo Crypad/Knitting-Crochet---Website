@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AlphaPatternController!{% endblock %}
+
+{% block body %}
+<div {{ react_component('AlphaPattern/AlphaPattern', { 
+    fetchUrl : path('app_alpha_pattern_upload')
+    }) }}></div>
+{% endblock %}

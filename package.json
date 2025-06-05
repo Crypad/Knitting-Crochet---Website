@@ -33,12 +33,15 @@
         "@fortawesome/react-fontawesome": "^0.2.2",
         "@react-spring/web": "^9.7.5",
         "@tailwindcss/postcss": "^4.0.3",
+        "@tinymce/tinymce-react": "^6.0.0",
+        "html2canvas": "^1.4.1",
         "leaflet": "^1.9.3",
         "leaflet.smooth_marker_bouncing": "^3.0.2",
         "postcss": "^8.5.1",
         "postcss-loader": "^8.1.1",
         "react-leaflet": "^4.2.0",
         "react-leaflet-marker": "^2.1.1",
+        "react-multi-carousel": "^2.8.5",
         "tailwindcss": "^4.0.3"
     }
 }

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit PublicationsSharing{% endblock %}
+
+{% block body %}
+    <h1>Edit PublicationsSharing</h1>
+
+    {{ include('publications_sharing/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_publications_sharing_index') }}">back to list</a>
+
+    {{ include('publications_sharing/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New PublicationsSharing{% endblock %}
+
+{% block body %}
+    <h1>Create new PublicationsSharing</h1>
+
+    {{ include('publications_sharing/_form.html.twig') }}
+
+    <a href="{{ path('app_publications_sharing_index') }}">back to list</a>
+{% endblock %}

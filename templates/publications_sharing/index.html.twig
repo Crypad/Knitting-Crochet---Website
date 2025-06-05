@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PublicationsSharing index{% endblock %}
+
+{% block body %}
+    <h1>PublicationsSharing index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Images</th>
+                <th>Content</th>
+                <th>Likes</th>
+                <th>CreatedAt</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for publications_sharing in publications_sharings %}
+            <tr>
+                <td>{{ publications_sharing.id }}</td>
+                <td>{{ publications_sharing.images ? publications_sharing.images|json_encode : '' }}</td>
+                <td>{{ publications_sharing.content ? publications_sharing.content|json_encode : '' }}</td>
+                <td>{{ publications_sharing.likes }}</td>
+                <td>{{ publications_sharing.createdAt ? publications_sharing.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_publications_sharing_show', {'id': publications_sharing.id}) }}">show</a>
+                    <a href="{{ path('app_publications_sharing_edit', {'id': publications_sharing.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_publications_sharing_new') }}">Create new</a>
+{% endblock %}

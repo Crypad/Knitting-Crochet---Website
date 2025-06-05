@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello SharingController!{% endblock %}
+
+{% block body %}
+    <div {{ react_component('Sharing/Sharing', { 
+        fetchModelsUrl : path('app_get_models'),
+        fetchCurrentUserUrl : path("app_get_user_id"),
+        fetchDeletePubUrl : path("app_publications_sharing_delete"),
+        fetchUploadUrl : path('app_add_pub'),
+        fetchTagsUrl : path('app_search_tag'),
+        fetchPublicationsByTagUrl : path('app_get_publications_by_tag'),
+        fetchAddLikeUrl : path('app_add_like'),
+        fetchRemoveLikeUrl : path('app_remove_like'),
+        fetchAddCommentUrl : path('app_add_comment'),
+        fetchGetAllCommentsUrl : path('app_get_comments'),
+        allPublications : publications,
+        assetUrlSharing : asset('assets/sharing/'),
+        assetUrlModels : asset('assets/models/'),
+        assetUrlProfile : asset('assets/profileImage/'),
+
+        }) }}></div>
+{% endblock %}

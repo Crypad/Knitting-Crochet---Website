@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AccountController!
+{% endblock %}
+
+{% block body %}
+
+	{% if app.user %}
+		{# <div class="accountContainer">
+		        <div id="accountImgContainer">
+		            <img class="accountImage" src="{{ asset('assets/profileImage/' ~ app.user.profileImage) }}" alt="">
+		        </div>
+		        <div class="mesInformations">
+		        <div class="groupInfo"><p class="accountLabel">Email : </p><span class="accountInfo">{{ app.user.email }}</span></div>
+		        <div class="groupInfo"><p class="accountLabel">Pseudo : </p><span class="accountInfo">{{ app.user.pseudo }}</span></div>
+		        <div class="groupInfo"><p class="accountLabel">Prénom : </p><span class="accountInfo">{{ app.user.surname }}</span></div>
+		        <div class="groupInfo"><p class="accountLabel">Nom : </p><span class="accountInfo">{{ app.user.name }}</span></div>
+		        <div class="groupInfo"><p class="accountLabel">Date de naissance : </p><span class="accountInfo">{{ app.user.birthdate|date("F j, Y") }}</span></div>
+		            
+		        </div>
+				
+		    </div> #}
+			
+		{% if userInfo %}
+
+			<div {{ react_component('Account/Account', { 
+				propsUser: userInfo, 
+				editUrl : path('app_edit', {'id': userInfo.id}), 
+				editUrlImg : path('app_editimage', {'id': userInfo.id}),
+				assetUrl : asset('assets/models/'),
+				modelDeleteUrl : path('app_alpha_pattern_delete'),
+				pathSharing : path('app_sharing')
+				} ) 
+			}}></div>
+			
+		{% endif %}
+
+	{% else %}
+		<script>
+			window.location.href = "http://127.0.0.1:8000";
+		</script>
+	{% endif %}
+{% endblock %}

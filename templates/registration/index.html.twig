@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello RegistrationController!
+{% endblock %}
+
+{% block body %}
+
+	{{ form_errors(registrationForm) }}
+
+	{% if app.user %}
+		<div class="mb-3">
+			Vous êtes connecté en tant que
+			{{ app.user.pseudo }}
+			<a href="{{ path('app_logout') }}">
+				<button class="logoutButton">Logout</button>
+			</a>
+		</div>
+	{% endif %}
+
+	<div class="loginRegisterDivContainer">
+
+		{{ form_start(registrationForm, { 'attr': {'class': 'loginRegisterDiv'} }) }}
+		<h1>Inscription</h1>
+
+		{{ form_row(registrationForm.email, { 
+            label: 'Adresse mail :',
+            'attr': {'class': 'inputs registerRow'} 
+        }) }}
+
+		{{ form_row(registrationForm.plain_password, {
+            label: 'Mot de passe :',
+            'attr': {'class': 'inputs registerRow'}
+        }) }}
+
+		{{ form_row(registrationForm.plain_password_confirmation, {
+            label: 'Confirmer le mot de passe :',
+            'attr': {'class': 'inputs registerRow'}
+        }) }}
+
+		{{ form_row(registrationForm.pseudo, { 
+            label: 'Pseudo :',
+            'attr': {'class': 'inputs registerRow'} 
+        }) }}
+
+		{{ form_row(registrationForm.surname, { 
+            label: 'Prenom :',
+            'attr': {'class': 'inputs registerRow'} 
+        }) }}
+
+		{{ form_row(registrationForm.name, { 
+            label: 'Nom :',
+            'attr': {'class': 'inputs registerRow'} 
+        }) }}
+
+		{{ form_row(registrationForm.birthdate, { 
+            label: 'Date de naissance :',
+            'attr': {'class': 'inputsBirth registerRow'} 
+        }) }}
+
+		{{ form_row(registrationForm.profile_image, { 
+            label: 'Image de profile :',
+            'attr': {'class': 'profileImage registerRow'} 
+        }) }}
+
+		{{ form_row(registrationForm.agreeTerms, { 
+            label: 'Accepter les termes :',
+            'attr': {'class': 'inputsTerms registerRowTermes'},
+            'row_attr' : {'class' : 'caca'} 
+        }) }}
+		<div class="confirmation">
+			<button type="submit" class="btnPrimary registerBtn">S'enregistrer</button>
+			<p>Vous avez déjà un compte ?</p>
+			<a class="btnPrimary" href="{{ path("app_login") }}">Se connecter</a>
+		</div>
+		{{ form_end(registrationForm) }}
+	</div>
+
+{% endblock %}

@@ -1,16 +1,23 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Home!{% endblock %}
+{% block title %}Home!
+{% endblock %}
 
 {% block body %}
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.3/leaflet.min.css" integrity="sha512-KJRB1wUfcipHY35z9dEE+Jqd+pGCuQ2JMZmQPAjwPjXuzz9oL1pZm2cd79vyUgHQxvb9sFQ6f05DIz0IqcG1Jw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<script>
-  const url = "{{ asset('img/') }}";
-</script>
-<h1 class="text-3xl font-bold underline">
-  Hello world avec tailwind!
-</h1>
+	<script async src="//www.instagram.com/embed.js"></script>
 
-<div {{ react_component('RollMenu/RollMenu') }}></div>
-<div {{ react_component('Map/Map') }}></div>
+
+	<div {{ react_component('Carrousel/Carrousel') }}></div>
+
+
+	<div {{ react_component('Cards/Cards', { 
+			publicationsArray: publicationsArray, 
+			fetchUrl : path('app_fetch_publications'),
+			fetchInstaUrl : path('app_fetch_instagram_publications'),
+			fetchAnnonceUrl : path('app_fetch_annonce'),
+			assetUrl : asset('img/publications-images/'), 
+		} ) }}></div>
+
+
+
 {% endblock %}

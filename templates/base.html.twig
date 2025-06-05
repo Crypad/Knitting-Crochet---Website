@@ -1,18 +1,96 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Welcome!
+			{% endblock %}
+		</title>
+		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('app') }}
+		{% endblock %}
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+		{% block javascripts %}
+			{{ encore_entry_script_tags('app') }}
+		{% endblock %}
+	</head>
+	<body>
+		<script>
+			const url = "{{ asset('img/') }}";
+		</script>
+
+		<nav class="bg-white border-gray-200 dark:bg-[#644758] navbar">
+			<div class=" flex flex-wrap items-center justify-between p-4">
+				<a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+					<img src="{{ asset('img/whoolLogo.png') }}" class="h-14" alt="Flowbite Logo"/>
+					<span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">WhoolLogo</span>
+				</a>
+				<button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-[#fcded6] focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-[#875f76] dark:focus:ring-[#50413a]" aria-controls="navbar-default" aria-expanded="false">
+					<span class="sr-only">Open main menu</span>
+					<svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 17 14">
+						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+					</svg>
+				</button>
+				<div class="hidden w-full md:block md:w-auto" id="navbar-default">
+					<ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-[#7c655a] rounded-lg bg-[#7c655a] md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-[#644758] md:dark:bg-[#644758] dark:border-[#7c655a]">
+						<li class="flex justify-center items-center">
+							<a href="{{ path('app_home') }}" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#fcded6] md:p-0 dark:text-white md:dark:hover:text-[#fcded6] dark:hover:bg-[#50413a] dark:hover:text-white md:dark:hover:bg-transparent">Accueil</a>
+						</li>
+						{% if not app.user %}
+							<li class="flex justify-center items-center">
+								<a href="{{ path('app_login') }}" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#fcded6] md:p-0 dark:text-white md:dark:hover:text-[#fcded6] dark:hover:bg-[#50413a] dark:hover:text-white md:dark:hover:bg-transparent">Partage</a>
+							</li>
+						{% else %}
+							<li class="flex justify-center items-center">
+								<a href="{{ path('app_sharing') }}" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#fcded6] md:p-0 dark:text-white md:dark:hover:text-[#fcded6] dark:hover:bg-[#50413a] dark:hover:text-white md:dark:hover:bg-transparent">Partage</a>
+							</li>
+						{% endif %}
+						{% if not app.user %}
+							<li class="flex justify-center items-center">
+								<a href="{{ path('app_login') }}" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#fcded6] md:p-0 dark:text-white md:dark:hover:text-[#fcded6] dark:hover:bg-[#50413a] dark:hover:text-white md:dark:hover:bg-transparent">Model Creator</a>
+							</li>
+						{% else %}
+							<li class="flex justify-center items-center">
+								<a href="{{ path('app_alpha_pattern') }}" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#fcded6] md:p-0 dark:text-white md:dark:hover:text-[#fcded6] dark:hover:bg-[#50413a] dark:hover:text-white md:dark:hover:bg-transparent">Model Creator</a>
+							</li>
+						{% endif %}
+						{% if app.user %}
+							{% if 'ROLE_ADMIN' in app.user.roles %}
+							<li class="flex justify-center items-center">
+								<a href="{{ path('admin') }}" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#fcded6] md:p-0 dark:text-white md:dark:hover:text-[#fcded6] dark:hover:bg-[#50413a] dark:hover:text-white md:dark:hover:bg-transparent">Mon Dashboard</a>
+							</li>
+							{% endif %}
+						{% endif %}
+						{% if app.user %}
+							<li class="flex justify-center items-center">
+								<a href="{{ path('app_account') }}" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#fcded6] md:p-0 dark:text-white md:dark:hover:text-[#fcded6] dark:hover:bg-[#50413a] dark:hover:text-white md:dark:hover:bg-transparent">Mon profil</a>
+							</li>
+							<li class="flex justify-center items-center">
+								<a href="{{ path('app_logout') }}" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#fcded6] md:p-0 dark:text-white md:dark:hover:text-[#fcded6] dark:hover:bg-[#50413a] dark:hover:text-white md:dark:hover:bg-transparent">Se déconnecter</a>
+							</li>
+							<li class="flex justify-center items-center" style="display : flex;">
+								<span style="color : #f8c7ae; padding-right : 1rem">Bonjour
+									{{ app.user.pseudo }}</span>
+								<img style="width : 50px; border-radius : 50%" src="{{ asset('assets/profileImage/' ~ app.user.profileImage) }}" alt="">
+							</li>
+						{% endif %}
+						{% if not app.user %}
+							<li class="flex justify-center items-center">
+								<a href="{{ path('app_login') }}" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#fcded6] md:p-0 dark:text-white md:dark:hover:text-[#fcded6] dark:hover:bg-[#50413a] dark:hover:text-white md:dark:hover:bg-transparent">Connexion</a>
+							</li>
+							<li class="flex justify-center items-center">
+								<a href="{{ path('app_registration') }}" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#fcded6] md:p-0 dark:text-white md:dark:hover:text-[#fcded6] dark:hover:bg-[#50413a] dark:hover:text-white md:dark:hover:bg-transparent">Inscription</a>
+							</li>
+						{% endif %}
+						
+					</ul>
+				</div>
+			</div>
+		</nav>
+		{% block body %}{% endblock %}
+		<div {{ react_component('Footer/Footer', { assetUrl : asset('img/') } ) }}></div>
+	</body>
 </html>

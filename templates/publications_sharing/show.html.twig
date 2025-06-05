@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PublicationsSharing{% endblock %}
+
+{% block body %}
+    <h1>PublicationsSharing</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ publications_sharing.id }}</td>
+            </tr>
+            <tr>
+                <th>Images</th>
+                <td>{{ publications_sharing.images ? publications_sharing.images|json_encode : '' }}</td>
+            </tr>
+            <tr>
+                <th>Content</th>
+                <td>{{ publications_sharing.content ? publications_sharing.content|json_encode : '' }}</td>
+            </tr>
+            <tr>
+                <th>Likes</th>
+                <td>{{ publications_sharing.likes }}</td>
+            </tr>
+            <tr>
+                <th>CreatedAt</th>
+                <td>{{ publications_sharing.createdAt ? publications_sharing.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_publications_sharing_index') }}">back to list</a>
+
+    <a href="{{ path('app_publications_sharing_edit', {'id': publications_sharing.id}) }}">edit</a>
+
+    {{ include('publications_sharing/_delete_form.html.twig') }}
+{% endblock %}
